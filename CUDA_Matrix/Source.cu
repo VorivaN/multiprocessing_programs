@@ -53,7 +53,7 @@ int main(int argc, char** argv) {
     cudaMemcpy(calcA, A, size * size, cudaMemcpyHostToDevice);
     cudaMemcpy(calcB, B, size * size, cudaMemcpyHostToDevice);
 
-    cout << "Ïðîãðàììà íà÷àëà ñâîþ ðàáîòó" << endl;
+    cout << "ÃÃ°Ã®Ã£Ã°Ã Ã¬Ã¬Ã  Ã­Ã Ã·Ã Ã«Ã  Ã±Ã¢Ã®Ã¾ Ã°Ã Ã¡Ã®Ã²Ã³" << endl;
 
     dim3 threadsPerBlock = dim3(threads, threads);
     dim3 blocksPerGrid = dim3(size / threads, size / threads);
@@ -73,11 +73,11 @@ int main(int argc, char** argv) {
     cudaFree(calcA);
     cudaFree(calcB);
     cudaFree(calcC);
-    free(a);
-    free(b);
-    free(c);
+    free(A);
+    free(B);
+    free(C);
     cudaEventDestroy(start);
-    cudaEventDestroy(stop);
+    cudaEventDestroy(end);
 
     return 0;
 }
